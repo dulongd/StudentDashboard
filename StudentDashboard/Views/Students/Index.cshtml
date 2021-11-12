@@ -5,15 +5,18 @@
 }
 
 <h2>Students</h2>
+@Html.ActionLink("Add Student", "New", "Students", new { @class = "btn btn-primary" })
+<br />
+<br />
 
-@if (!Model.Any()) 
+@if (!Model.Any())
 {
     <p>No students have been added yet.</p>
 }
 else
 {
     <ul>
-       @foreach (var student in Model)
+        @foreach (var student in Model)
         {
             <li>@student.FirstName @student.LastName</li>
         }

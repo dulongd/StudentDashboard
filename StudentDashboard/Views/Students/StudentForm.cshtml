@@ -1,0 +1,45 @@
+﻿@model StudentDashboard.ViewModels.StudentFormViewModel
+@{
+    ViewBag.Title = @Model.Title;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Title</h2>
+
+@using (Html.BeginForm("Save", "Students"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.FirstName)
+        @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.FirstName)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.LastName)
+        @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+    </div>    
+    @*<div class="form-group">
+        @Html.LabelFor(m => m.CourseId)
+        @Html.DropDownListFor(m => m.CourseId, new SelectList(Model.Courses, "Id", "Name"), "Select Course", new { @class = "form-control" })
+    </div>*@
+    <div class="form-group">
+        @Html.LabelFor(m => m.EnrolledDate)
+        @Html.TextBoxFor(m => m.EnrolledDate, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.EnrolledDate)
+    </div>
+
+    @Html.HiddenFor(m => m.Id)
+    <button type="submit" class="btn btn-primary">Save</button>
+
+    if (!Model.IsNewStudent)
+    {
+        @Html.ActionLink("Delete", "Delete", "Students", new { id = Model.Id }, new { @class = "btn btn-primary" });
+    }
+    @Html.ActionLink("Cancel", "Index", "Students", new { @class = "btn btn-primary" });
+
+
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

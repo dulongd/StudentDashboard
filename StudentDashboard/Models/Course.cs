@@ -12,17 +12,21 @@ namespace StudentDashboard.Models
 
         [Required]
         [StringLength(255)]
+        [Display(Name="Course Name")]
         public string CourseName { get; set; }
 
         [Required]
+        [Display(Name="Course Description")]
         public string CourseDescription { get; set; }
 
         [Required]
         [StringLength(255)]
+        [Display(Name="Tutor Name")]
         public string TutorName { get; set; }
 
         [Required]
         [Range(1,10)]
-        public int CourseRating { get; set; }
+        [Display(Name="Course Rating")]
+        public byte CourseRating { get; set; }
     }
 }

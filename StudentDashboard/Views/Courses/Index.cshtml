@@ -5,6 +5,8 @@
 }
 
 <h2>Courses</h2>
+@Html.ActionLink("Add Course", "New", "Courses", new {@class = "btn btn-primary"})
+<br/><br/>
 
 @if (!Model.Any())
 {
@@ -12,10 +14,20 @@
 }
 else
 {
-    <ul>
+    <table>
+        <thead>
+        <tr>
+            <th>Courses</th>
+        </tr>
+        </thead>
         @foreach (var course in Model)
         {
-            <li>@course.CourseName</li>
+            <tr>
+                <td>@course.CourseName</td>
+                <td>@Html.ActionLink("Edit", "Edit", "Courses", new {id = course.Id}, new {@class="btn btn-primary"})</td>
+                <td>@Html.ActionLink("Delete", "Delete", "Courses", new {id = course.Id}, new {@class="btn btn-primary"})</td>
+            </tr>
+            
         }
-    </ul>
+    </table>
 }
