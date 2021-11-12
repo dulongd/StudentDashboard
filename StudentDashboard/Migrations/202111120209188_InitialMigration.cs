@@ -1,4 +1,4 @@
-﻿hnamespace StudentDashboard.Migrations
+﻿namespace StudentDashboard.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;
