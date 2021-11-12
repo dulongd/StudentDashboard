@@ -23,8 +23,8 @@ namespace StudentDashboard
                       "~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/bootstrap-superhero3.css",
+                      "~/Content/Site.css"));
         }
     }
 }

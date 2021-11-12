@@ -1,0 +1,21 @@
+﻿@model IEnumerable<StudentDashboard.Models.Student>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Students</h2>
+
+@if (!Model.Any()) 
+{
+    <p>No students have been added yet.</p>
+}
+else
+{
+    <ul>
+       @foreach (var student in Model)
+        {
+            <li>@student.FirstName @student.LastName</li>
+        }
+    </ul>
+}
