@@ -94,5 +94,26 @@ namespace StudentDashboard.Controllers
 
             return RedirectToAction("Index", "Courses");
         }
+
+        public ActionResult Details(int id)
+        {
+            var course = _context.Courses.SingleOrDefault(c => c.Id == id);
+            var students = _context.Students.ToList();
+
+            if (course == null)
+            {
+                return HttpNotFound();
+            }
+
+            var enrolledStudents = students.Where(student => student.CourseId == id);
+
+            var viewModel = new CourseDetailsViewModel()
+            {
+                Course = course,
+                Students = enrolledStudents
+            };
+
+            return View(viewModel);
+        }
     }
 }

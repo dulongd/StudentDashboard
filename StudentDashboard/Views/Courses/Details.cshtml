@@ -1,0 +1,47 @@
+﻿@model StudentDashboard.ViewModels.CourseDetailsViewModel
+@{
+    ViewBag.Title = "Course Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Course.CourseName</h2>
+
+<table class="table table-striped table-hover ">
+    <tr>
+        <th>Course Description</th>
+        <td>@Model.Course.CourseDescription</td>
+    </tr>
+    <tr>
+        <th>Tutor Name</th>
+        <td>@Model.Course.TutorName</td>
+    </tr>
+    <tr>
+        <th>Course Rating</th>
+        <td>@Model.Course.CourseRating</td>
+    </tr>
+    <tr>
+        <th>Enrolled Students</th>
+        @if (!Model.Students.Any())
+        {
+            <td>There are no students currently enrolled in this course.</td>
+        }
+        else
+        {
+            <td>
+                <ul>
+                    @foreach (var student in Model.Students)
+                    {
+                        <li>
+                            @Html.ActionLink($"{student.FirstName} {student.LastName}", "Details", "Students",
+                                new {id = student.Id}, null)
+                        </li>
+                    }
+                </ul>
+            </td>
+        }
+
+        </tr>
+</table>
+@Html.ActionLink(HttpUtility.HtmlDecode("&laquo; All Courses"), "Index", "Courses", new { @class = "btn btn-primary" })
+
+
