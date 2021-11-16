@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Security.Permissions;
 using System.Web;
@@ -67,6 +68,7 @@ namespace StudentDashboard.Controllers
 
                 studentInDb.FirstName = student.FirstName;
                 studentInDb.LastName = student.LastName;
+                studentInDb.Birthdate = student.Birthdate;
                 studentInDb.CourseId = student.CourseId;
                 studentInDb.EnrolledDate = student.EnrolledDate;
                 studentInDb.StatusId = student.StatusId;
@@ -112,6 +114,17 @@ namespace StudentDashboard.Controllers
             return RedirectToAction("Index", "Students");
         }
 
+        public ActionResult Details(int id)
+        {
+            var student = _context.Students.Include(s => s.Course).Include(s => s.Status).SingleOrDefault(s => s.Id == id);
+
+            if (student == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(student);
+        }
 
     }
 }

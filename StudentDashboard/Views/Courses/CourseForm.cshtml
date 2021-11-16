@@ -33,13 +33,17 @@
     @Html.HiddenFor(m => m.Id)
     @Html.AntiForgeryToken();
     <button type="submit" class="btn btn-primary">Save</button>
-    
-    if (!Model.IsNewCustomer) 
+
+    if (!Model.IsNewCustomer)
     {
-        @Html.ActionLink("Delete", "Delete", "Courses", new {id = Model.Id}, new { @class = "btn btn-primary" });
+        @Html.ActionLink("Delete", "Delete", "Courses", new { id = Model.Id }, new
+        {
+            @class = "btn btn-primary",
+                   onclick = $"return confirm('Are you sure you want to delete course: {Model.CourseName}? All associated students will also be deleted.')"
+        })
     }
-    @Html.ActionLink("Cancel", "Index", "Courses", new {@class = "btn btn-primary"});
-    
+    @Html.ActionLink("Cancel", "Index", "Courses", new { @class = "btn btn-primary" });
+
 
 }
 

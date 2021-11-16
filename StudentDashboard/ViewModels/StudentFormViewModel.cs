@@ -22,6 +22,10 @@ namespace StudentDashboard.ViewModels
         [Display(Name = "Last Name")]
         public string LastName { get; set; }
 
+        [Required]
+        [StudentAgeMin18Years]
+        public DateTime? Birthdate { get; set; }
+
         [Display(Name = "Course")]
         public int? CourseId { get; set; }
 
@@ -64,6 +68,7 @@ namespace StudentDashboard.ViewModels
             Id = student.Id;
             FirstName = student.FirstName;
             LastName = student.LastName;
+            Birthdate = student.Birthdate;
             CourseId = student.CourseId;
             EnrolledDate = student.EnrolledDate;
             StatusId = student.StatusId;

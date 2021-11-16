@@ -173,9 +173,14 @@
     <Compile Include="Migrations\202111160234193_UpdateGradeStringLength.designer.cs">
       <DependentUpon>202111160234193_UpdateGradeStringLength.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202111160314282_AddBirthdateToStudent.cs" />
+    <Compile Include="Migrations\202111160314282_AddBirthdateToStudent.designer.cs">
+      <DependentUpon>202111160314282_AddBirthdateToStudent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\Status.cs" />
+    <Compile Include="Models\StudentAgeMin18Years.cs" />
     <Compile Include="Models\StudentDashboardContext.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -222,6 +227,7 @@
     <Content Include="Views\Courses\Index.cshtml" />
     <Content Include="Views\Courses\CourseForm.cshtml" />
     <Content Include="Views\Students\StudentForm.cshtml" />
+    <Content Include="Views\Students\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -269,6 +275,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202111160234193_UpdateGradeStringLength.resx">
       <DependentUpon>202111160234193_UpdateGradeStringLength.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111160314282_AddBirthdateToStudent.resx">
+      <DependentUpon>202111160314282_AddBirthdateToStudent.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

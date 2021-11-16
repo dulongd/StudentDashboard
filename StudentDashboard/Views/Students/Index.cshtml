@@ -23,10 +23,12 @@ else
         </thead>
         @foreach (var student in Model)
         {
+            var fullName = $"{student.FirstName} {student.LastName}";
             <tr>
-                <td>@student.FirstName @student.LastName</td>
+                <td>@Html.ActionLink(@fullName, "Details", "Students", new { id = student.Id}, null)</td>
                 <td>@Html.ActionLink("Edit", "Edit", "Students", new { id = student.Id }, new { @class = "btn btn-primary btn-sm" })</td>
-                <td>@Html.ActionLink("Delete", "Delete", "Students", new { id = student.Id }, new { @class = "btn btn-primary btn-sm"})</td>
+                <td>@Html.ActionLink("Delete", "Delete", "Students", new { id = student.Id }, new { @class = "btn btn-primary btn-sm", 
+                   onclick=$"return confirm('Are you sure you want to delete student: {@fullName}?')"})</td>
             </tr>
 
         }

@@ -48,12 +48,20 @@ label {
     margin-right: 10px;
 }
 
-td {
+td, th {
     padding: 5px;
 }
 
 tr {
     border-bottom: 1px solid white;
 }
+
+.details {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
 
 

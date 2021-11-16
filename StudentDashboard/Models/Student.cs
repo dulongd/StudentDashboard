@@ -18,6 +18,11 @@ namespace StudentDashboard.Models
         [StringLength(255)]
         public string LastName { get; set; }
 
+        [Required]
+        [StudentAgeMin18Years]
+
+        public DateTime Birthdate { get; set; }
+
         public Course Course { get; set; }
 
         public int CourseId { get; set; }
