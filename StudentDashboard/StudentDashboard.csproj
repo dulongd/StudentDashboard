@@ -145,8 +145,37 @@
     <Compile Include="Migrations\202111120507077_PopulateUnenrolledCourse.designer.cs">
       <DependentUpon>202111120507077_PopulateUnenrolledCourse.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202111130458003_AddForeignKey.cs" />
+    <Compile Include="Migrations\202111130458003_AddForeignKey.designer.cs">
+      <DependentUpon>202111130458003_AddForeignKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111152206416_AddStatusTable.cs" />
+    <Compile Include="Migrations\202111152206416_AddStatusTable.designer.cs">
+      <DependentUpon>202111152206416_AddStatusTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111152207203_PopulateStatusTable.cs" />
+    <Compile Include="Migrations\202111152207203_PopulateStatusTable.designer.cs">
+      <DependentUpon>202111152207203_PopulateStatusTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111152225363_AddStatusIdToStudent.cs" />
+    <Compile Include="Migrations\202111152225363_AddStatusIdToStudent.designer.cs">
+      <DependentUpon>202111152225363_AddStatusIdToStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111152351522_MakeLastNameOptional.cs" />
+    <Compile Include="Migrations\202111152351522_MakeLastNameOptional.designer.cs">
+      <DependentUpon>202111152351522_MakeLastNameOptional.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111160112531_Revert.cs" />
+    <Compile Include="Migrations\202111160112531_Revert.designer.cs">
+      <DependentUpon>202111160112531_Revert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111160234193_UpdateGradeStringLength.cs" />
+    <Compile Include="Migrations\202111160234193_UpdateGradeStringLength.designer.cs">
+      <DependentUpon>202111160234193_UpdateGradeStringLength.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Course.cs" />
+    <Compile Include="Models\Status.cs" />
     <Compile Include="Models\StudentDashboardContext.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -219,6 +248,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202111120507077_PopulateUnenrolledCourse.resx">
       <DependentUpon>202111120507077_PopulateUnenrolledCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111130458003_AddForeignKey.resx">
+      <DependentUpon>202111130458003_AddForeignKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111152206416_AddStatusTable.resx">
+      <DependentUpon>202111152206416_AddStatusTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111152207203_PopulateStatusTable.resx">
+      <DependentUpon>202111152207203_PopulateStatusTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111152225363_AddStatusIdToStudent.resx">
+      <DependentUpon>202111152225363_AddStatusIdToStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111152351522_MakeLastNameOptional.resx">
+      <DependentUpon>202111152351522_MakeLastNameOptional.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111160112531_Revert.resx">
+      <DependentUpon>202111160112531_Revert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111160234193_UpdateGradeStringLength.resx">
+      <DependentUpon>202111160234193_UpdateGradeStringLength.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

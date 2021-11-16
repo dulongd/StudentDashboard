@@ -16,15 +16,24 @@
     <div class="form-group">
         @Html.LabelFor(m => m.LastName)
         @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
-    </div>    
-    @*<div class="form-group">
+    </div>
+    <div class="form-group">
         @Html.LabelFor(m => m.CourseId)
-        @Html.DropDownListFor(m => m.CourseId, new SelectList(Model.Courses, "Id", "Name"), "Select Course", new { @class = "form-control" })
-    </div>*@
+        @Html.DropDownListFor(m => m.CourseId, new SelectList(Model.Courses, "Id", "CourseName"), "Select Course", new { @class = "form-control" })
+    </div>
     <div class="form-group">
         @Html.LabelFor(m => m.EnrolledDate)
-        @Html.TextBoxFor(m => m.EnrolledDate, new { @class = "form-control" })
+        @Html.TextBoxFor(m => m.EnrolledDate, "{0:MMM d yyyy}", new { @class = "form-control" })
         @Html.ValidationMessageFor(m => m.EnrolledDate)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.StatusId)
+        @Html.DropDownListFor(m => m.StatusId, new SelectList(Model.Statuses, "Id", "Description"), "Select Status", new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Grade)
+        @Html.TextBoxFor(m => m.Grade, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Grade)
     </div>
 
     @Html.HiddenFor(m => m.Id)

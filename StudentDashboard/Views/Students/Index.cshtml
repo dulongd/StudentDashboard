@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<StudentDashboard.Models.Student>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Students";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -15,10 +15,20 @@
 }
 else
 {
-    <ul>
+    <table>
+        <thead>
+            <tr>
+                <th>Students</th>
+            </tr>
+        </thead>
         @foreach (var student in Model)
         {
-            <li>@student.FirstName @student.LastName</li>
+            <tr>
+                <td>@student.FirstName @student.LastName</td>
+                <td>@Html.ActionLink("Edit", "Edit", "Students", new { id = student.Id }, new { @class = "btn btn-primary btn-sm" })</td>
+                <td>@Html.ActionLink("Delete", "Delete", "Students", new { id = student.Id }, new { @class = "btn btn-primary btn-sm"})</td>
+            </tr>
+
         }
-    </ul>
+    </table>
 }

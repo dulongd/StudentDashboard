@@ -10,34 +10,32 @@ namespace StudentDashboard.ViewModels
     public class StudentFormViewModel
     {
         public IEnumerable<Course> Courses { get; set; }
+        public IEnumerable<Status> Statuses { get; set; }
 
         public int? Id { get; set; }
 
-        [Required]
         [StringLength(255)]
+        [Display(Name = "First Name")]
         public string FirstName { get; set; }
 
-        [Required]
         [StringLength(255)]
+        [Display(Name = "Last Name")]
         public string LastName { get; set; }
 
-        [Required]
+        [Display(Name = "Course")]
         public int? CourseId { get; set; }
 
         [Required]
+        [Display(Name = "Enrolled Date")]
         public DateTime? EnrolledDate { get; set; }
 
         [Required]
-        public int? Status { get; set; }
+        [Display(Name = "Status")]
+        public int? StatusId { get; set; }
 
         [Required]
         [StringLength(10)]
         public string Grade { get; set; }
-
-        public string Title
-        {
-            get { return (Id != 0) ? "Edit Student" : "Add New Student"; }
-        }
 
         public bool IsNewStudent
         {
@@ -47,8 +45,13 @@ namespace StudentDashboard.ViewModels
             }
         }
 
-        public static readonly int inProgress = 0;
-        public static readonly int Completed = 1;
+        public string Title
+        {
+            get
+            {
+                return (IsNewStudent) ? "Add New Student" : "Edit Student";
+            }
+        }
 
         public StudentFormViewModel()
         {
@@ -63,8 +66,8 @@ namespace StudentDashboard.ViewModels
             LastName = student.LastName;
             CourseId = student.CourseId;
             EnrolledDate = student.EnrolledDate;
-            Status = student.Status;
-
+            StatusId = student.StatusId;
+            Grade = student.Grade;
         }
     }
 }

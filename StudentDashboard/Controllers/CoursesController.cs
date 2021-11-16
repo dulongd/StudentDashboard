@@ -39,12 +39,12 @@ namespace StudentDashboard.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Course course)
         {
             if (!ModelState.IsValid)
             {
                 var viewModel = new CourseFormViewModel(course);
-                
                 return View("CourseForm", viewModel);
             }
 

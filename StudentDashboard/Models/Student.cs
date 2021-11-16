@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -14,25 +15,22 @@ namespace StudentDashboard.Models
         [StringLength(255)]
         public string FirstName { get; set; }
 
-        [Required]
         [StringLength(255)]
         public string LastName { get; set; }
 
-        [Required]
+        public Course Course { get; set; }
+
         public int CourseId { get; set; }
 
         [Required]
         public DateTime EnrolledDate { get; set; }
 
-        [Required]
-        public int Status { get; set; }
+        public Status Status { get; set; }
+
+        public int StatusId { get; set; }
 
         [Required]
         [StringLength(10)]
-
         public string Grade { get; set; }
-
-        public static readonly int inProgress = 0;
-        public static readonly int Completed = 1;
     }
 }

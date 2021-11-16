@@ -10,6 +10,7 @@ namespace StudentDashboard.Models
     {
         public DbSet<Student> Students { get; set; }
         public DbSet<Course> Courses { get; set; }
+        public DbSet<Status> Statuses { get; set; }
         public StudentDashboardContext() : base ("name=StudentDashboardConnection")
         {
             
