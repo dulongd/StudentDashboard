@@ -76,7 +76,7 @@ namespace StudentDashboard.Controllers
             }
 
             _context.SaveChanges();
-            return RedirectToAction("Index", "Students");
+            return RedirectToAction("Details", "Students", new {id = student.Id});
         }
 
         public ActionResult Edit(int id)

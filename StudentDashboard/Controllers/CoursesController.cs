@@ -63,7 +63,7 @@ namespace StudentDashboard.Controllers
             }
 
             _context.SaveChanges();
-            return RedirectToAction("Index", "Courses");
+            return RedirectToAction("Details", "Courses", new { id = course.Id});
         }
 
         public ActionResult Edit(int id)
